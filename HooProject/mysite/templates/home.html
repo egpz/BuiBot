@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body {
+          background-color: black;
+        }
+        
+        h1 {
+          color: white;
+          font-family: monospace;
+        }
+
+        button {
+        border: none;
+        background-color: green;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        font-family: monospace;
+        font-size: 20px;
+        margin: 20px
+        }
+    
+        .centered {
+            display: block;
+            margin: 0 auto;
+            resize: none;
+            width: 400px;
+            height: 500px;
+        }
+
+        .popover__wrapper {
+        position: relative;
+        margin-top: 5px;
+        display: inline-block;
+        }
+
+        .popover__text {
+        width: auto;
+        transform: translate(0, 10px);
+        visibility: hidden;
+        position: absolute;
+        padding: 5px;
+        background-color: #bfbfbf;
+        }
+
+        .popover__text:before {
+        position: absolute;
+        content: "";
+        border-color: transparent transparent #bfbfbf transparent;
+        border-style: solid;
+        border-width: 0 10px 10px 10px;
+        right: calc(50% - 10px);
+        top: -8px;
+        transition-duration: 0.s;
+        transition-property: transform;
+        }
+        
+        .popover__wrapper:hover .popover__text {
+        opacity: 1;
+        transform: translate(0, -20px);
+        visibility: visible;
+        transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.75);
+        }
+        </style>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+    <h1>Enter Your Code Below:</h1>
+    <form method="post">    
+        {% csrf_token %}
+        {{ form }}
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+    </div>  
+    <div class="popover__wrapper">
+    <center><a href="#">
+        <h2 class="popover__link"><span style="font-family: monospace;color:white">{{ input_code }}</span></h2>
+    </a></center>
+        <div class="popover__text">
+          <p>{{ annotations }}</p>
+        </div>
+    </div>
+    <div>
+</body>
+</html>

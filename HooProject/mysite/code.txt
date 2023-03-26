@@ -1,0 +1,4 @@
+def evens(stream):
+  for num in stream:
+    if int(num) % 2 == 0:
+      yield num.strip()
