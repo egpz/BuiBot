@@ -2,7 +2,7 @@ import os
 import openai
 import sys
 
-openai.api_key = "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"
+openai.api_key = ""
 
 keywords = {
                 'None':{'def':None,'yt':'https://www.youtube.com/watch?v=4c7tXkqPk54'},
